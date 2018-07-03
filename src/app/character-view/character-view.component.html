@@ -1,0 +1,29 @@
+<div class="container-fluid" style="text-align:center;">
+  <div style="background-color: thistle">
+    <div class="row" style="text-align: center">
+      <div class="col-md-12" style="font-size: 22px; color: blue;font-weight: bold;padding-top: 10px;"><h3>CHARACTERS</h3></div>
+      <br/>
+      <br/>
+    </div>
+
+
+    <div class="row" style="text-align: center;padding: 10px" *ngIf="allCharacters.length>0">
+      <div ng-app="myApp" ng-controller="orderCtrl"></div>
+      <div class="col-md-4" *ngFor="let character of allCharacters,let i = index"  >
+
+
+        <div class="card border-primary mb-3">
+          <div class="card-header text-primary" style="font-weight: bold; font-size: 20px; height: 72px;">{{character.aliases}}</div>
+          <img class="card-top" src="../assets/characters/{{i}}.jpg" alt="Card image cap" style="height: 250px;padding:5px">
+          <div class="card-body">
+            <p>Gender</p>
+            <h5 class="card-title text-primary">{{character.gender}}</h5>
+            <p class="card-text"></p>
+            <a [routerLink]="['/blog', character.url,'characters',i]" class="btn btn-primary">Character Details</a>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+  </div>

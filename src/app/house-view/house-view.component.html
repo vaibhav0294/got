@@ -1,0 +1,29 @@
+<div class="container-fluid" style="text-align:center;">
+  <div style="background-color: thistle">
+    <div class="row" style="text-align: center">
+      <div class="col-md-12" style="font-size: 22px; color: blue;padding-top: 10px"><h3>HOUSES</h3></div>
+      <br/>
+      <br/>
+    </div>
+
+
+    <div class="row" style="text-align: center;padding: 10px" *ngIf="allHouses.length>0">
+      <div ng-app="myApp" ng-controller="orderCtrl"></div>
+      <div class="col-md-4" *ngFor="let house of allHouses | orderBy : 'name',let i = index"  >
+
+
+        <div class="card border-primary mb-3">
+          <div class="card-header text-primary" style="font-weight: bold; font-size: 20px; height: 72px;">{{house.name | uppercase}}</div>
+          <img class="card-top" src="../assets/houses/{{i}}.jpg" alt="Card image {{i}}" style="height: 250px;padding:5px">
+          <div class="card-body">
+            <p>Region</p>
+            <h5 class="card-title text-primary">{{house.region}}</h5>
+            <p class="card-text"></p>
+            <a [routerLink]="['/blog', house.url,'houses',i]" class="btn btn-primary">House Details</a>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,65 @@
+<div class="container" style="text-align: center;padding-top: 30px;">
+  <div class="row" *ngIf="currentDetails" style="text-align: center">
+
+    <div class="col-md-6 offset-3" *ngIf="type=='books'">
+      <div class="card border-primary" style="width: 100%; ">
+        <div class="card-header" style="font-weight: bold; font-size: 22px">{{currentDetails.name | uppercase}}</div>
+        <div class="card-body">
+          <img class="card-top" src="../assets/books/{{imageName}}.jpg" alt="Card image cap" style="height: 250px;width: 100%">
+          <br>
+          <br>
+          <p>Written by</p>
+          <h5>{{currentDetails.authors}}</h5>
+          <hr>
+          <p>Published by</p>
+          <h5>{{currentDetails.publisher}}</h5>
+          <hr>
+          <p>Releases on</p>
+          <h5>{{currentDetails.released | date}}</h5>
+          <hr>
+          <br/>
+          <a class="btn btn-primary" (click)="goBackToPreviousPage()">Go Back</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 offset-3" *ngIf="type=='houses'">
+      <div class="card border-primary" style="width: 100%; ">
+        <div class="card-header" style="font-weight: bold; font-size: 22px">{{currentDetails.name | uppercase}}</div>
+        <div class="card-body">
+          <img class="card-top" src="../assets/houses/{{imageName}}.jpg" alt="Card image cap" style="height: 250px;width: 100%">
+          <br>
+          <br>
+          <p>Region</p>
+          <h5>{{currentDetails.region}}</h5>
+          <hr>
+          <p>Coat Of Arms</p>
+          <h5>{{currentDetails.coatOfArms}}</h5>
+          <hr>
+          <br/>
+          <a class="btn btn-primary" (click)="goBackToPreviousPage()">Go Back</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 offset-3" *ngIf="type=='characters'">
+      <div class="card border-primary" style="width: 100%; ">
+        <div class="card-header" style="font-weight: bold; font-size: 22px">{{currentDetails.aliases}}</div>
+        <div class="card-body">
+          <img class="card-top" src="../assets/characters/{{imageName}}.jpg" alt="Card image cap" style="height: 250px;width: 100%">
+          <br>
+          <br>
+          <p>Gender</p>
+          <h5>{{currentDetails.gender}}</h5>
+          <hr>
+          <p>Culture</p>
+          <h5>{{currentDetails.culture}}</h5>
+          <hr>
+          <br/>
+          <a class="btn btn-primary" (click)="goBackToPreviousPage()">Go Back</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
